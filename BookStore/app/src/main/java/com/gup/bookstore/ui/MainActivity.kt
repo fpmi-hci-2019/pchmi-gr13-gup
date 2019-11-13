@@ -1,7 +1,8 @@
-package com.gup.bookstore
+package com.gup.bookstore.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.gup.bookstore.R
 
 class MainActivity : AppCompatActivity() {
 
