@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "27715481585",
+    "firebase_url": "https://gupbookstore.firebaseio.com",
+    "project_id": "gupbookstore",
+    "storage_bucket": "gupbookstore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27715481585:android:3717ad3c9e8fa5dbc01e50",
+        "android_client_info": {
+          "package_name": "com.gup.bookstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27715481585-cph61motthq0524k288fmnmghu4usp7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gup.bookstore",
+            "certificate_hash": "e6a73f6c800f98daa1927c331768ea309acf0162"
+          }
+        },
+        {
+          "client_id": "27715481585-felbrlf8vocamvs2mu8qun0v5gcohokc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHJbNCiTMysRPCP-PVVyn6FnjAjOvKWJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27715481585-felbrlf8vocamvs2mu8qun0v5gcohokc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

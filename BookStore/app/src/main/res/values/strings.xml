@@ -2,8 +2,6 @@
     <string name="app_name">BookStore</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
-    <string name="password">Password</string>
-    <string name="email">Email</string>
     <string name="catalog">Catalog</string>
     <string name="favorites">Favorites</string>
     <string name="cart">Cart</string>

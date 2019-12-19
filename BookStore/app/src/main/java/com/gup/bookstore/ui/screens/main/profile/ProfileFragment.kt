@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import com.firebase.ui.auth.AuthUI
 import com.gup.bookstore.BookStoreApp
 import com.gup.bookstore.R
 import com.gup.bookstore.ui.base.BaseFragment
@@ -18,7 +19,7 @@ class ProfileFragment : BaseFragment<ProfileViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        logoutButton.setOnClickListener { vm.logout() }
+        logoutButton.setOnClickListener { logout() }
     }
 
     override fun createViewModel() = BookStoreApp.instance.locator.createProfileViewModel()
@@ -26,6 +27,11 @@ class ProfileFragment : BaseFragment<ProfileViewModel>() {
     override fun bindViewModel() {
         super.bindViewModel()
         vm.loggedOut.observe(this, Observer { processLogoutResult(it) })
+    }
+
+    private fun logout() {
+        vm.logout()
+        AuthUI.getInstance().signOut(requireContext())
     }
 
     private fun processLogoutResult(loggedOut: Boolean) {
