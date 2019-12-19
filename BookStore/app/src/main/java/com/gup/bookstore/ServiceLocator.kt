@@ -143,8 +143,8 @@ class ServiceLocator(app: BookStoreApp) {
         )
     }
 
-    private fun createLoginUsecase(): LoginUsecase {
-        return LoginUsecaseImpl(localProfileRepository)
+    private fun createSaveUserIdUsecase(): SaveUserIdUsecase {
+        return SaveUserIdUsecaseImpl(localProfileRepository)
     }
 
     private fun createLogoutUsecase(): LogoutUsecase {
@@ -216,7 +216,7 @@ class ServiceLocator(app: BookStoreApp) {
     }
 
     fun createLoginViewModel(): LoginViewModel {
-        return LoginViewModel(createLoginUsecase())
+        return LoginViewModel(createSaveUserIdUsecase())
     }
 
     fun createMainViewModel(): MainViewModel {
