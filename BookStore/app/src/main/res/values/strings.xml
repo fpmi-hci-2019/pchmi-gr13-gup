@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">BookStore</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="catalog">Catalog</string>
+    <string name="favorites">Favorites</string>
+    <string name="cart">Cart</string>
+    <string name="news">News</string>
+    <string name="profile">Profile</string>
+    <string name="unexpected_error">Unexpected error. Please, contact support</string>
+    <string name="invalid_credentials">Invalid credentials</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="subscribe_to_news">Subscribe to news</string>
+    <string name="unsubscribe_from_news">Unsubscribe from news</string>
+
+    <string name="book_name_format">\"%s\" by %s</string>
+    <string name="price_format">%s$</string>
+    <string name="total_price_format">Total price: %s$</string>
+    <string name="news_publisher_format">Published %s by %s</string>
 </resources>

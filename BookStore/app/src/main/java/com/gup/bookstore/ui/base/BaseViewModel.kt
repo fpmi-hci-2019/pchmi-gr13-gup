@@ -1,11 +1,44 @@
 package com.gup.bookstore.ui.base
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<U : BaseContract.UI, A : BaseContract.Args>(protected val args: A) :
-    ViewModel(), BaseContract.ViewModel<U> {
+abstract class BaseViewModel : ViewModel() {
 
-    override val loading: LiveData<Boolean> = MutableLiveData<Boolean>()
+    private val viewModelJob = Job()
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+    val loading = MutableLiveData<Boolean>()
+    val error = MutableLiveData<Throwable>()
+
+    protected fun launchExplicitly(f: suspend () -> Unit): Job {
+        return uiScope.launch {
+            try {
+                loading.value = true
+                f()
+            } catch (error: Throwable) {
+                this@BaseViewModel.error.value = error
+            } finally {
+                loading.value = false
+            }
+        }
+    }
+
+    protected fun launchImplicitly(f: suspend () -> Unit): Job {
+        return uiScope.launch {
+            try {
+                f()
+            } catch (error: Throwable) {
+                this@BaseViewModel.error.value = error
+            }
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 }

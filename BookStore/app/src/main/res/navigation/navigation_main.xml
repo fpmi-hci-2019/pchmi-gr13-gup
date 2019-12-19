@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/catalogScreen">
+    <fragment
+        android:id="@+id/catalogScreen"
+        android:name="com.gup.bookstore.ui.screens.main.catalog.CatalogFragment"
+        android:label="CatalogScreen"
+        tools:layout="@layout/fragment_catalog" />
+    <fragment
+        android:id="@+id/favoritesScreen"
+        android:name="com.gup.bookstore.ui.screens.main.favorites.FavoritesFragment"
+        android:label="FavoritesScreen"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/cartScreen"
+        android:name="com.gup.bookstore.ui.screens.main.cart.CartFragment"
+        android:label="CartScreen"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/newsScreen"
+        android:name="com.gup.bookstore.ui.screens.main.news.NewsListFragment"
+        android:label="NewsScreen"
+        tools:layout="@layout/fragment_news_list" />
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.gup.bookstore.ui.screens.main.profile.ProfileFragment"
+        android:label="ProfileScreen"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
