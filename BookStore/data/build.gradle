@@ -19,22 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
-    // Koin
-    api "org.koin:koin-android:$koin_version"
-    api "org.koin:koin-androidx-viewmodel:$koin_version"
-    api "org.koin:koin-core-ext:$koin_version"
-
-    // Kotlin
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
-    // Rx
-    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
-    api 'io.reactivex.rxjava2:rxjava:2.2.6'
-    api 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+    // Project stuff
+    api project(':domain')
 
     // Testing
     testImplementation 'junit:junit:4.12'

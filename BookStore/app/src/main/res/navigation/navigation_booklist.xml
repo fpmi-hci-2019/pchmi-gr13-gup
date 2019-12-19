@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_booklist"
+    app:startDestination="@id/bookScreen"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/bookScreen"
+        android:name="com.gup.bookstore.ui.screens.booklist.book.BookFragment"
+        android:label="BookScreen"
+        tools:layout="@layout/fragment_book" />
+    <fragment
+        android:id="@+id/authorScreen"
+        android:name="com.gup.bookstore.ui.screens.booklist.author.AuthorFragment"
+        android:label="AuthorScreen"
+        tools:layout="@layout/fragment_author" />
+    <fragment
+        android:id="@+id/publisherScreen"
+        android:name="com.gup.bookstore.ui.screens.publisher.PublisherFragment"
+        android:label="PublisherScreen"
+        tools:layout="@layout/fragment_publisher" />
+</navigation>
