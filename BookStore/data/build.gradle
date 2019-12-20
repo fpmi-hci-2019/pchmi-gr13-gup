@@ -25,6 +25,9 @@ dependencies {
     // Project stuff
     api project(':domain')
 
+    // Firestore
+    api 'com.google.firebase:firebase-firestore-ktx:21.3.1'
+
     // Testing
     testImplementation 'junit:junit:4.12'
 }

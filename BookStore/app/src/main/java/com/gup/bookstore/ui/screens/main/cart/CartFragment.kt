@@ -16,7 +16,6 @@ import com.gup.bookstore.ui.screens.main.MainActivity
 import com.gup.bookstore.ui.screens.main.cart.adapter.OrderedBookPreviewsAdapter
 import com.gup.domain.entities.BookPreview
 import kotlinx.android.synthetic.main.fragment_cart.*
-import java.math.BigDecimal
 
 class CartFragment : BaseFragment<CartViewModel>() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -67,7 +66,7 @@ class CartFragment : BaseFragment<CartViewModel>() {
         }
     }
 
-    private fun showOrderPrice(price: BigDecimal) {
-        orderPriceView.text = resources.getString(R.string.total_price_format).format(price.toPlainString())
+    private fun showOrderPrice(price: Double) {
+        orderPriceView.text = resources.getString(R.string.total_price_format).format(price)
     }
 }

@@ -4,4 +4,10 @@ class Author(
     val id: String,
     val name: String,
     val biography: String
-)
+) {
+    constructor() : this(
+        "",
+        "",
+        ""
+    )
+}

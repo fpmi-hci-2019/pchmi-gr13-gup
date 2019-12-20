@@ -6,14 +6,13 @@ import com.gup.domain.entities.BookPreview
 import com.gup.domain.exceptions.BookStoreException
 import com.gup.domain.usecases.LoadOrderUsecase
 import com.gup.domain.usecases.RemoveBookFromOrderUsecase
-import java.math.BigDecimal
 
 class CartViewModel(
     private val loadOrderUsecase: LoadOrderUsecase,
     private val removeBookFromOrderUsecase: RemoveBookFromOrderUsecase
 ) : BaseViewModel() {
     val orderedBookPreviews = MutableLiveData<List<BookPreview>>()
-    val orderPrice = MutableLiveData<BigDecimal>()
+    val orderPrice = MutableLiveData<Double>()
 
     fun updateOrder() {
         launchExplicitly {
@@ -31,8 +30,8 @@ class CartViewModel(
         }
     }
 
-    private fun List<BookPreview>?.totalPrice(): BigDecimal {
-        var totalPrice = BigDecimal.ZERO
+    private fun List<BookPreview>?.totalPrice(): Double {
+        var totalPrice = 0.0
         this?.forEach { totalPrice += it.price }
         return totalPrice
     }

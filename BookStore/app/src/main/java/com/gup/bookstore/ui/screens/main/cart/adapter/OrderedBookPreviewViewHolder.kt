@@ -16,7 +16,7 @@ class OrderedBookPreviewViewHolder(
     override fun updateUI(item: BookPreview) {
         with(root) {
             nameView.text = resources.getString(R.string.book_name_format).format(item.name, item.author)
-            priceView.text = resources.getString(R.string.price_format).format(item.price.toPlainString())
+            priceView.text = resources.getString(R.string.price_format).format(item.price)
             textContainerView.setOnClickListener { onTextClicked(item) }
             removeButton.setOnClickListener { onRemoveClicked(item) }
         }
