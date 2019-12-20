@@ -5,4 +5,11 @@ class NewsPreview(
     val text: String,
     val date: String,
     val publisherId: String
-)
+) {
+    constructor() : this(
+        "",
+        "",
+        "",
+        ""
+    )
+}

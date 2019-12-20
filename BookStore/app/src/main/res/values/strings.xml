@@ -7,6 +7,7 @@
     <string name="cart">Cart</string>
     <string name="news">News</string>
     <string name="profile">Profile</string>
+    <string name="backend_error">Backend error. Please, contact support</string>
     <string name="unexpected_error">Unexpected error. Please, contact support</string>
     <string name="invalid_credentials">Invalid credentials</string>
     <string name="add_to_favorites">Add to favorites</string>
@@ -16,7 +17,7 @@
     <string name="unsubscribe_from_news">Unsubscribe from news</string>
 
     <string name="book_name_format">\"%s\" by %s</string>
-    <string name="price_format">%s$</string>
-    <string name="total_price_format">Total price: %s$</string>
+    <string name="price_format">%.2f$</string>
+    <string name="total_price_format">Total price: %.2f$</string>
     <string name="news_publisher_format">Published %s by %s</string>
 </resources>

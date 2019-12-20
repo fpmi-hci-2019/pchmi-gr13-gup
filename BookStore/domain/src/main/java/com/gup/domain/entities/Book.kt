@@ -1,7 +1,5 @@
 package com.gup.domain.entities
 
-import java.math.BigDecimal
-
 class Book(
     val id: String,
     val name: String,
@@ -11,5 +9,17 @@ class Book(
     val genre: String,
     val publisherId: String,
     val publisherName: String,
-    val price: BigDecimal
-)
+    val price: Double
+) {
+    constructor() : this(
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        0.0
+    )
+}

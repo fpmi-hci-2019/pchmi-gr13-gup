@@ -5,4 +5,11 @@ class Publisher(
     val name: String,
     val description: String,
     val address: String
-)
+) {
+    constructor() : this(
+        "",
+        "",
+        "",
+        ""
+    )
+}

@@ -7,4 +7,13 @@ class News(
     val date: String,
     val publisherId: String,
     val publisherName: String
-)
+) {
+    constructor() : this(
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    )
+}

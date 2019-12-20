@@ -2,6 +2,7 @@ package com.gup.bookstore
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.firebase.firestore.FirebaseFirestore
 import com.gup.bookstore.ui.screens.booklist.BookListViewModel
 import com.gup.bookstore.ui.screens.booklist.author.AuthorViewModel
 import com.gup.bookstore.ui.screens.booklist.book.BookViewModel
@@ -28,8 +29,8 @@ class ServiceLocator(app: BookStoreApp) {
 
     // Repositories
 
-    private val localBooksRepository: BooksRepository by lazy {
-        LocalBooksRepositoryImpl()
+    private val remoteBooksRepository: BooksRepository by lazy {
+        RemoteBooksRepositoryImpl(FirebaseFirestore.getInstance())
     }
 
     private val localFavoritesRepository: FavoritesRepository by lazy {
@@ -85,17 +86,17 @@ class ServiceLocator(app: BookStoreApp) {
     }
 
     private fun createGetAuthorUsecase(): GetAuthorUsecase {
-        return GetAuthorUsecaseImpl(localBooksRepository)
+        return GetAuthorUsecaseImpl(remoteBooksRepository)
     }
 
     private fun createGetBookPreviewsUsecase(): GetBookPreviewsUsecase {
-        return GetBookPreviewsUsecaseImpl(localBooksRepository)
+        return GetBookPreviewsUsecaseImpl(remoteBooksRepository)
     }
 
     private fun createGetBookUsecase(): GetBookUsecase {
         return GetBookUsecaseImpl(
             localProfileRepository,
-            localBooksRepository,
+            remoteBooksRepository,
             localFavoritesRepository
         )
     }
@@ -103,7 +104,7 @@ class ServiceLocator(app: BookStoreApp) {
     private fun createGetFavoriteBookPreviewsUsecase(): GetFavoriteBookPreviewsUsecase {
         return GetFavoriteBookPreviewsUsecaseImpl(
             localProfileRepository,
-            localBooksRepository,
+            remoteBooksRepository,
             localFavoritesRepository
         )
     }
@@ -111,19 +112,19 @@ class ServiceLocator(app: BookStoreApp) {
     private fun createGetNewsPreviewsUsecase(): GetNewsPreviewsUsecase {
         return GetNewsPreviewsUsecaseImpl(
             localProfileRepository,
-            localBooksRepository,
+            remoteBooksRepository,
             localSubscriptionsRepository
         )
     }
 
     private fun createGetNewsUsecase(): GetNewsUsecase {
-        return GetNewsUsecaseImpl(localBooksRepository)
+        return GetNewsUsecaseImpl(remoteBooksRepository)
     }
 
     private fun createGetPublisherUsecase(): GetPublisherUsecase {
         return GetPublisherUsecaseImpl(
             localProfileRepository,
-            localBooksRepository,
+            remoteBooksRepository,
             localSubscriptionsRepository
         )
     }
@@ -138,7 +139,7 @@ class ServiceLocator(app: BookStoreApp) {
     private fun createLoadOrderUsecase(): LoadOrderUsecase {
         return LoadOrderUsecaseImpl(
             localProfileRepository,
-            localBooksRepository,
+            remoteBooksRepository,
             localOrderRepository
         )
     }

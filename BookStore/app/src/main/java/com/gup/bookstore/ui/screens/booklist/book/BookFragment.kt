@@ -46,7 +46,7 @@ class BookFragment : BaseFragment<BookViewModel>() {
         genreView.text = book.genre
         publisherView.text = book.publisherName
         publisherView.setOnClickListener { openPublisher(book.publisherId) }
-        priceView.text = resources.getString(R.string.price_format).format(book.price.toPlainString())
+        priceView.text = resources.getString(R.string.price_format).format(book.price)
     }
 
     private fun openAuthor(id: String) {
