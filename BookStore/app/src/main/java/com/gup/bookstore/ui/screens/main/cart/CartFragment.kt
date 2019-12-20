@@ -32,6 +32,7 @@ class CartFragment : BaseFragment<CartViewModel>() {
             )
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
         }
+        checkoutOrderButton.setOnClickListener { checkoutOrder() }
     }
 
     override fun onResume() {
@@ -56,6 +57,10 @@ class CartFragment : BaseFragment<CartViewModel>() {
 
     private fun removeBookFromOrder(id: String) {
         vm.removeBookFromOrder(id)
+    }
+
+    private fun checkoutOrder() {
+        vm.checkoutOrder()
     }
 
     private fun showBookPreviews(booksPreviews: List<BookPreview>) {
