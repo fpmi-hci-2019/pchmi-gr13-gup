@@ -85,6 +85,13 @@ class ServiceLocator(app: BookStoreApp) {
         )
     }
 
+    private fun createCheckoutOrderUsecase(): CheckoutOrderUsecase {
+        return CheckoutOrderUsecaseImpl(
+            localProfileRepository,
+            localOrderRepository
+        )
+    }
+
     private fun createGetAuthorUsecase(): GetAuthorUsecase {
         return GetAuthorUsecaseImpl(remoteBooksRepository)
     }
@@ -204,7 +211,8 @@ class ServiceLocator(app: BookStoreApp) {
     fun createCartViewModel(): CartViewModel {
         return CartViewModel(
             createLoadOrderUsecase(),
-            createRemoveBookFromOrderUsecase()
+            createRemoveBookFromOrderUsecase(),
+            createCheckoutOrderUsecase()
         )
     }
 
